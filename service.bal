@@ -5,9 +5,9 @@ import ballerina/log;
 # bound to port `9090`.
 service / on new http:Listener(9090) {
 
-    # A resource for generating greetings
+    # A resource for finding pets based on the status
     # + status - the input string status
-    # + return - pet store name with hello message or error
+    # + return - pets based on the status
     resource function get pets(string status) returns json|error {
         // Send a response back to the caller.
         if status is "" {
