@@ -1,0 +1,24 @@
+[
+  {
+    "petName": "Dog 2",
+    "photoUrls": [
+      "url1",
+      "url2"
+    ]
+  },
+  {
+    "petName": "Gatitotototo"
+  },
+  {
+    "petName": "Special_char_owner_!@#$^&()`.testing",
+    "photoUrls": [
+      "https://petstore3.swagger.io/resources/photos/623389095.jpg"
+    ]
+  },
+  {
+    "petName": "見響见响仮仏!$%&()*+,-ƄƅƆḞḟṀʶʷʸăĄą",
+    "photoUrls": [
+      "https://petstore3.swagger.io/resources/photos/623389095.jpg"
+    ]
+  }
+]

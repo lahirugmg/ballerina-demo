@@ -1,0 +1,59 @@
+[
+    {
+        "id": 5,
+        "category": {
+            "id": 1,
+            "name": "Dogs"
+        },
+        "name": "Dog 2",
+        "photoUrls": [
+            "url1",
+            "url2"
+        ],
+        "tags": [
+            {
+                "id": 1,
+                "name": "tag2"
+            },
+            {
+                "id": 2,
+                "name": "tag3"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 2,
+        "category": {
+            "id": 2,
+            "name": "Chaucito"
+        },
+        "name": "Gatitotototo",
+        "photoUrls": [],
+        "tags": [
+            {
+                "id": 1,
+                "name": "Bizcocho"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 6,
+        "name": "Special_char_owner_!@#$^&()`.testing",
+        "photoUrls": [
+            "https://petstore3.swagger.io/resources/photos/623389095.jpg"
+        ],
+        "tags": [],
+        "status": "sold"
+    },
+    {
+        "id": 134674,
+        "name": "見響见响仮仏!$%&()*+,-ƄƅƆḞḟṀʶʷʸăĄą",
+        "photoUrls": [
+            "https://petstore3.swagger.io/resources/photos/623389095.jpg"
+        ],
+        "tags": [],
+        "status": "sold"
+    }
+]
