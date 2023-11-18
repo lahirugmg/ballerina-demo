@@ -11,14 +11,15 @@ service / on new http:Listener(9090) {
     resource function get pets(string status) returns json|error {
         // Send a response back to the caller.
         if status is "" {
+
+            log:printError(string `status is ` + status);
             return error("status should not be empty!");
         }
-        log:printInfo(string `status is ` + status);
 
         PetsInputItem[]|error res = getPetsBySearch(status);
         if res is error {
-            log:printError("error occured while invoking");
-            return {"Error":1};
+            log:printError("error occured while invoking: " + res.message());
+            return res;
         } else {
             
 
@@ -67,14 +68,10 @@ function transform(PetsInputItem petsInputItem) returns PetsOutputItem => {
 
 public function getPetsBySearch(string status) returns PetsInputItem[]|error {
 
-    if status is "" {
-        return error("status cannot be empty");
-    } else {
+   
+    string petStoreEndPoint = "https://petstore3.swagger.io/api/v3/pet";
+    http:Client petStoreClient = check new (petStoreEndPoint);
+    PetsInputItem[] pets = check petStoreClient->/findByStatus(status = status);
 
-        string petStoreEndPoint = "https://petstore3.swagger.io/api/v3/pet";
-        http:Client petStoreClient = check new (petStoreEndPoint);
-        PetsInputItem[] pets = check petStoreClient->/findByStatus(status = status);
-
-        return pets;
-    }
+    return pets;
 }
