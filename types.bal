@@ -1,4 +1,4 @@
-type Category record {
+public type Category record {
     int id;
     string name;
 };
@@ -12,7 +12,7 @@ type PetsOutput record {
     PetsOutputItem[] petsOutput;
 };
 
-type TagsItem record {
+public type TagsItem record {
     int id;
     string name;
 };
@@ -21,7 +21,7 @@ public type PetsInputItem record {
     int id;
     string name;
     string[] photoUrls;
-    (TagsItem[]|anydata[]) tags;
+    TagsItem[] tags;
     string status;
     Category category?;
 };
