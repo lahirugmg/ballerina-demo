@@ -1,6 +1,13 @@
 import ballerina/http;
 import ballerina/log;
 import ballerina/sql;
+import ballerina/constraint;
+
+// Validate status if not empty
+@constraint:String{
+    minLength: 1
+}
+type Status string;
 
 # A service representing a network-accessible API
 # bound to port `9090`.
@@ -9,14 +16,8 @@ service / on new http:Listener(9090) {
     # A resource for finding pets based on the status
     # + status - the input string status
     # + return - pets based on the status
-    resource function get pets(string status) returns json|error {
+    resource function get pets(Status status) returns json|error {
         // Send a response back to the caller.
-        if status is "" {
-
-            log:printError(string `status is ${status}`);
-            return error("status should not be empty!");
-        }
-
         PetsInputItem[]|error res = getPetsBySearch(status);
         if res is error {
             log:printError(string `error occurred while invoking: ${res.message()}`);
