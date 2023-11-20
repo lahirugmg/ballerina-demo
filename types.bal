@@ -20,7 +20,7 @@ type TagsItem record {
 public type PetsInputItem record {
     int id;
     string name;
-    (string[]) photoUrls;
+    string[] photoUrls;
     (TagsItem[]|anydata[]) tags;
     string status;
     Category category?;
