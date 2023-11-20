@@ -13,13 +13,13 @@ service / on new http:Listener(9090) {
         // Send a response back to the caller.
         if status is "" {
 
-            log:printError(string `status is ` + status);
+            log:printError(string `status is ${status}`);
             return error("status should not be empty!");
         }
 
         PetsInputItem[]|error res = getPetsBySearch(status);
         if res is error {
-            log:printError("error occured while invoking: " + res.message());
+            log:printError(string `error occurred while invoking: ${res.message()}`);
             return res;
         } else {
             
