@@ -42,7 +42,8 @@ function transform(PetsInputItem petsInputItem) returns PetsOutputItem => {
 
 public function getPetsBySearch(string status) returns PetsInputItem[]|error {
 
-    string petStoreEndPoint = "https://petstore3.swagger.io/api/v3/pet";
+    // string petStoreEndPoint = "https://petstore3.swagger.io/api/v3/pet";
+    string petStoreEndPoint = "https://run.mocky.io/v3/8efa2487-ebd6-4faf-85d3-1aa2c886fe37";
     http:Client petStoreClient = check new (petStoreEndPoint);
     PetsInputItem[] pets = check petStoreClient->/findByStatus(status = status);
 
