@@ -16,7 +16,7 @@ service / on new http:Listener(9090) {
     # A resource for finding pets based on the status
     # + status - the input string status
     # + return - pets based on the status
-    resource function get pets(Status status) returns json|error {
+    resource function get pets(Status status) returns PetsOutputItem[]|error {
         // Send a response back to the caller.
         PetsInputItem[]|error res = getPetsBySearch(status);
         if res is error {
@@ -31,7 +31,7 @@ service / on new http:Listener(9090) {
             log:printError(string `Error occurred while inserting to database: ${writeToDatabaseResult.message()}`);
         }
         PetsOutputItem[] output = res.map(petItem => transform(petItem));
-        return output.toJson();
+        return output;
     }
 }
 
