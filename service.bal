@@ -27,7 +27,7 @@ service / on new http:Listener(9090) {
 
             if writeToDatabaseResult is sql:BatchExecuteError {
                 
-                log:printError("Error occurred while inserting to database ");
+                log:printError(string `Error occurred while inserting to database: ${writeToDatabaseResult.message()}`);
             } 
             PetsOutputItem[] output = res.map(petItem => transform(petItem)); 
             return output.toJson();
