@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/log;
+import ballerina/sql;
 
 # A service representing a network-accessible API
 # bound to port `9090`.
@@ -22,7 +23,12 @@ service / on new http:Listener(9090) {
             return res;
         } else {
             
+            error? writeToDatabaseResult = addPets(res);
 
+            if writeToDatabaseResult is sql:BatchExecuteError {
+                
+                log:printError("Error occurred while inserting to database ");
+            } 
             PetsOutputItem[] output = res.map(petItem => transform(petItem)); 
             return output.toJson();
         }
@@ -48,7 +54,7 @@ type TagsItem record {
     string name;
 };
 
-type PetsInputItem record {
+public type PetsInputItem record {
     int id;
     string name;
     (string[]) photoUrls;
