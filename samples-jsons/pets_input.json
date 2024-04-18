@@ -7,9 +7,9 @@
         },
         "name": "Dog 2",
         "photoUrls": [
-            "url1",
-            "url2"
-        ],
+            "https://as2.ftcdn.net/v2/jpg/02/05/40/05/1000_F_205400578_d9U1yWD7OCh4BDIUr3IdCabNcXgVSDev.jpg",
+            "https://as1.ftcdn.net/v2/jpg/01/67/61/88/1000_F_167618810_WYbpRVYGFXQrBOj2Hj3L1uaMRk1kjx15.jpg"
+          ],
         "tags": [
             {
                 "id": 1,
@@ -29,31 +29,15 @@
             "name": "Chaucito"
         },
         "name": "Gatitotototo",
-        "photoUrls": [],
+        "photoUrls": [
+            "https://t4.ftcdn.net/jpg/01/99/00/79/240_F_199007925_NolyRdRrdYqUAGdVZV38P4WX8pYfBaRP.jpg"
+          ],
         "tags": [
             {
                 "id": 1,
                 "name": "Bizcocho"
             }
         ],
-        "status": "sold"
-    },
-    {
-        "id": 6,
-        "name": "Special_char_owner_!@#$^&()`.testing",
-        "photoUrls": [
-            "https://petstore3.swagger.io/resources/photos/623389095.jpg"
-        ],
-        "tags": [],
-        "status": "sold"
-    },
-    {
-        "id": 134674,
-        "name": "見響见响仮仏!$%&()*+,-ƄƅƆḞḟṀʶʷʸăĄą",
-        "photoUrls": [
-            "https://petstore3.swagger.io/resources/photos/623389095.jpg"
-        ],
-        "tags": [],
         "status": "sold"
     }
 ]
