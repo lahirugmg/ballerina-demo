@@ -5,12 +5,10 @@ Create data base on MySQL prompt
 
 Create a table for storing Pets on MySQL prompt
 ```
-CREATE TABLE Persons (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
+CREATE TABLE Pet (
+    id int,
+    name varchar(255),
+    status varchar(255)
 );
 ```
 

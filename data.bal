@@ -10,7 +10,7 @@ configurable int PORT = ?;
 configurable string DATABASE = ?;
 
 final mysql:Client dbClient = check new(
-host=HOST, user=USER, password=PASSWORD, port=PORT, database="Pets"
+host=HOST, user=USER, password=PASSWORD, port=PORT, database=DATABASE
 );
 
 type Pet record {|
