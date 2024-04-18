@@ -12,6 +12,8 @@ CREATE TABLE Pet (
 );
 ```
 
-Check out the repo and run
+Check out the repo, cd into "ballerina-demo" folder and run
 
-```bal run ballerina-demo```
+```bal run```
+
+Note: check the DB config based on your MySQL settings
